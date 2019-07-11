@@ -1,0 +1,71 @@
+<form (submit)="addUser()">
+   
+    <div class="form-group">
+        <label for="firstname">FIRST NAME</label>
+         <input required 
+         [(ngModel)]="fname"
+         name="firstname" 
+         type="text" 
+         placeholder="Enter First Name"
+         class="form-control">  
+         &nbsp;&nbsp;
+  
+        <label for="lastname">LAST NAME</label>
+        <input required 
+        [(ngModel)]="lname"
+        name="lastname"
+        type="text" 
+        placeholder="Enter Last Name" 
+        class="form-control"><br><br>
+    </div>
+
+
+    <div class="form-group">
+        <label for="Address">ADDRESS</label>
+        <input required 
+        [(ngModel)]="address" 
+        name="Address"
+        type="text" 
+        placeholder="Enter address" 
+        class="form-control" >
+
+    </div><br>
+        
+    
+    <div class="form-group">
+        <label for="Contact">CONTACT NUMBER</label>
+        <input required
+        [(ngModel)]="contact"
+        name="Contact"  
+        maxlength="10" type="text" placeholder="Enter contact"
+        class="form-control" >
+        &nbsp;&nbsp;
+
+             
+        <label for="Email">EMAIL</label>
+        <input required 
+        [(ngModel)]="email"
+        name="Email"
+        type="text" 
+        placeholder="Enter Email"
+        class="form-control" >
+         
+    </div><br><br>
+
+    <div>
+    <button type="submit" onclick="addUser()">SIGNUP</button>&nbsp;&nbsp;
+
+    <button class="clr-btn" onclick="this.form.reset();">CLEAR</button>&nbsp;&nbsp;
+    
+    <button class="btn btn-primarY">LIST USERS</button> &nbsp;&nbsp;
+    
+    
+
+    <li *ngFor="let users of userlist">{{users.fname}}, {{users.lname}},{{users.address}}, {{users.contact}},{{users.email}}
+
+        </li>
+        
+    </div>
+
+</form>
+
